@@ -1,15 +1,18 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import connect from './database/mongodb.js';
 import cors from 'cors';
+import bodyParser from 'body-parser';
+import TransactionsAPI from './routes/TransactionsAPI.js';
 
 const PORT=4000
 const app=express();
 
-app.use(cors);
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/transaction',TransactionsAPI);
 
-await mongoose.connect
-("mongodb+srv://SajalSharma:chanakyamern@chanakyamern.vxtb781.mongodb.net/?retryWrites=true&w=majority")
-.then(()=>console.log("MongoDB Connection Successful"));
+await connect();
+
 
 app.get('/',(req, res) => {
     res.send("Hello world!");
