@@ -52,16 +52,18 @@ export default function TransactionForm({fetchTransactions}) {
         <TextField sx={{marginRight:5, marginBottom:5}}  id="outlined-basic" name="amount" label="Amount" value={form.amount}  onChange={handleChange} variant="outlined" />
         <TextField sx={{marginRight:5, marginBottom:5}}  id="outlined-basic" name="description" label="Description" value={form.description} onChange={handleChange} variant="outlined" />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Box>
             <DesktopDatePicker
               label="Transaction Date"
               inputFormat="MM/DD/YYYY"
               value={form.date}
-              sx={{ marginRight: 5 ,marginBottom:5, borderColor:"black"}} 
+              sx={{ marginRight: 5 ,marginBottom:5, borderColor:"black",borderColor: 'primary.main'}} 
               onChange={handleDate}
               renderInput={(params) => (
                 <TextField  {...params}  error={false}/>
               )}
             />
+            </Box>
           </LocalizationProvider>
 
 

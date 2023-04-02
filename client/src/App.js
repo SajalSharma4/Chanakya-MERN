@@ -17,7 +17,6 @@ function App() {
     const res=await fetch('http://localhost:4000/transaction');
     const {data}=await res.json();
     settransactions(data);
-    console.log(data);
   }
   
   

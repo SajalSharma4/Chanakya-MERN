@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
+import dayjs from 'dayjs';
 
 export default function TransactionsList({transactions,fetchTransactions}) {
 
@@ -22,6 +23,10 @@ export default function TransactionsList({transactions,fetchTransactions}) {
       fetchTransactions();
       window.alert("Deleted Successfully");
     }
+  }
+
+  function formatDate(date){
+    return dayjs(date).format("DD MMM, YYYY")
   }
 
   return (
@@ -49,7 +54,7 @@ export default function TransactionsList({transactions,fetchTransactions}) {
                 {row.amount}
               </TableCell>
               <TableCell align="center">{row.description}</TableCell>
-              <TableCell align="center">{row.date}</TableCell>
+              <TableCell align="center">{formatDate(row.date)}</TableCell>
               <TableCell align="center">
                 <IconButton color="primary" component="label">
                   <BorderColorIcon/>
