@@ -48,11 +48,10 @@ export default function TransactionForm({fetchTransactions}) {
     <Card sx={{ minWidth: 275 ,marginTop:10}}>
       <CardContent>
       <Typography sx={{marginTop:5}}variant="h6">Add New Transaction</Typography>
-        <form onSubmit={handleSubmit} sx={{align: 'center'}}>
+        <form onSubmit={handleSubmit} sx={{alignContent: 'center'}}>
         <TextField sx={{marginRight:5, marginBottom:5}}  id="outlined-basic" name="amount" label="Amount" value={form.amount}  onChange={handleChange} variant="outlined" />
         <TextField sx={{marginRight:5, marginBottom:5}}  id="outlined-basic" name="description" label="Description" value={form.description} onChange={handleChange} variant="outlined" />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box>
             <DesktopDatePicker
               label="Transaction Date"
               inputFormat="MM/DD/YYYY"
@@ -60,10 +59,9 @@ export default function TransactionForm({fetchTransactions}) {
               sx={{ marginRight: 5 ,marginBottom:5, borderColor:"black",borderColor: 'primary.main'}} 
               onChange={handleDate}
               renderInput={(params) => (
-                <TextField  {...params}  error={false}/>
+                <TextField  {...params}  onError={false}/>
               )}
             />
-            </Box>
           </LocalizationProvider>
 
 
