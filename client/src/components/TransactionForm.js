@@ -40,7 +40,7 @@ export default function TransactionForm({fetchTransactions,editTransactions}) {
 
   async function handleSubmit(e){
     e.preventDefault();
-    const res=await fetch('http://localhost:4000/transaction',{
+    const res=await fetch(`${process.env.REACT_APP_API_URL}/transaction`,{
       method: 'POST',
       body:JSON.stringify(form),
       headers:{
