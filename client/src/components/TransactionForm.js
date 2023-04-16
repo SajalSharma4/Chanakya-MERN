@@ -9,6 +9,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { useEffect, useState } from "react";
+import dayjs from 'dayjs';
+
 
 const InitialForm={
   amount:0,
@@ -16,9 +18,16 @@ const InitialForm={
   date: "",
 }
 
-export default function TransactionForm({fetchTransactions}) {
+export default function TransactionForm({fetchTransactions,editTransactions}) {
 
   const [form, setform] = useState(InitialForm);
+
+  useEffect(() => {
+    if(editTransactions!==undefined){
+    console.log(editTransactions);
+  }
+  }, [editTransactions]);
+
 
   function handleChange(e){
     setform({...form,[e.target.name]:e.target.value});
@@ -63,7 +72,7 @@ export default function TransactionForm({fetchTransactions}) {
               )}
             />
           </LocalizationProvider>
-
+                
 
           <Button variant="contained" type="submit" size="large" sx={{fontSize:20}}>Submit</Button>
         </form>

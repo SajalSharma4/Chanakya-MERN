@@ -12,7 +12,7 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 import dayjs from 'dayjs';
 
-export default function TransactionsList({transactions,fetchTransactions}) {
+export default function TransactionsList({transactions,fetchTransactions,setEditTransactions}) {
 
   async function remove(_id){
     if(!window.confirm("Are you sure?")) return;
@@ -56,7 +56,7 @@ export default function TransactionsList({transactions,fetchTransactions}) {
               <TableCell align="center">{row.description}</TableCell>
               <TableCell align="center">{formatDate(row.date)}</TableCell>
               <TableCell align="center">
-                <IconButton color="primary" component="label">
+                <IconButton color="primary" component="label" onClick={()=> setEditTransactions(row)}>
                   <BorderColorIcon/>
                 </IconButton>
                 <IconButton color="warning" component="label" onClick={()=>remove(row._id)}>
