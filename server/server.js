@@ -3,6 +3,7 @@ import connect from './database/mongodb.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import TransactionsAPI from './routes/TransactionsAPI.js';
+import UserApi from './routes/UserApi.js';
 import AuthAPI from './routes/AuthAPI.js';
 import passport from 'passport';
 import passportConfig from './config/passport.js';
@@ -21,6 +22,7 @@ passportConfig(passport);
 
 app.use('/transaction',TransactionsAPI);
 app.use('/auth',AuthAPI);
+app.use('/user',UserApi);
 
 
 await connect();
