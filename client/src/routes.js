@@ -7,6 +7,8 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Cookies from 'js-cookie';
+import CheckAuth from './utils/CheckAuth';
+import Guest from './utils/Guest';
 
 const token=Cookies.get('token');
 
@@ -15,15 +17,23 @@ export default createBrowserRouter([
       element: <App/>,
       children:[{
         path: "/",
-        element: token!==undefined ? <Home/>:<Navigate to="/login" replace={true}/>,
+        //element: token!==undefined ? <Home/>:<Navigate to="/login" replace={true}/>,
+        //element:<Home/>,
+        element:<CheckAuth>
+          <Home/>
+        </CheckAuth>,
       },
       {
         path: "/login",
-        element: <Login/>,
+        element:<Guest>
+            <Login/>
+        </Guest> ,
       },
       {
         path: "/register",
-        element: <Register/>,
+        element: <Guest>
+            <Register/>
+        </Guest> ,
       }
     ],
     },

@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: {type:String,required:['Email Required']},
   password: {type:String,required:['Password Required']},
 },
-{timestamps:true,}
+{timestamps:true}
 );
 
 export default new mongoose.model("User", userSchema);
