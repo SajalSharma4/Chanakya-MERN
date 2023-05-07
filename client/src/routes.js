@@ -19,9 +19,9 @@ export default createBrowserRouter([
         path: "/",
         //element: token!==undefined ? <Home/>:<Navigate to="/login" replace={true}/>,
         //element:<Home/>,
-        element:<CheckAuth>
-          <Home/>
-        </CheckAuth>,
+        element://<CheckAuth>
+          <Home/>,
+        //</CheckAuth>,
       },
       {
         path: "/login",

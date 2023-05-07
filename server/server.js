@@ -4,7 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import TransactionsAPI from './routes/TransactionsAPI.js';
 import UserApi from './routes/UserApi.js';
-import AuthAPI from './routes/AuthAPI.js';
+import AuthAPI from './routes/AuthApi.js';
 import passport from 'passport';
 import passportConfig from './config/passport.js';
 import * as dotenv from 'dotenv';
