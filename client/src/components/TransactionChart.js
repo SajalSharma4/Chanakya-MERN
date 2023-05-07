@@ -3,7 +3,12 @@ import Paper from '@mui/material/Paper';
 import {
   Chart,
   BarSeries,
+    ArgumentAxis,
+  ValueAxis,
+  Tooltip,
 } from '@devexpress/dx-react-chart-material-ui';
+import { ArgumentScale,Animation, EventTracker } from '@devexpress/dx-react-chart'
+import { scaleBand } from '@devexpress/dx-chart-core';
 
 const data = [
   { year: '1950', population: 2.525 },
@@ -28,15 +33,20 @@ export default class TransactionChart extends React.PureComponent {
     const { data: chartData } = this.state;
 
     return (
-      <Paper sx={{margin:5}}>
+      <Paper sx={{marginTop:5}}>
         <Chart
           data={chartData}
         >
-
+            <ArgumentScale factory={scaleBand} />
+          <ArgumentAxis />
+          <ValueAxis />
           <BarSeries
             valueField="population"
             argumentField="year"
           />
+          <Animation/>
+        <EventTracker/>
+        <Tooltip/>
         </Chart>
       </Paper>
     );
