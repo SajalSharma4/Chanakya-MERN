@@ -38,9 +38,9 @@ export default createBrowserRouter([
       {
         path: "/category",
         element: (
-          <CheckAuth>
+          //<CheckAuth>
             <Category />
-          </CheckAuth>
+          //</CheckAuth>
         ),
       },
     ],
