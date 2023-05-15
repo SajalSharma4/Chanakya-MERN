@@ -11,4 +11,3 @@ It also shows the total monthly expenses of the users in a graphical format.
 ![image](https://user-images.githubusercontent.com/79101773/236692821-0d473807-d1ca-4ad5-a3ef-a5d2ded91863.png)
 
 ![image](https://user-images.githubusercontent.com/79101773/236692830-c517f94a-bcb7-493c-bf7f-8c99fc4a3a9a.png)
-
